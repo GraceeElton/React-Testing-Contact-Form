@@ -39,7 +39,7 @@ test("Contact form adds new contact", async () => {
 // #2 test submit
 
 test("contact form will submit", () => {
-  const { getByLabelText, getBytext, getByTestId } = render(<ContactForm />);
+  const { getByLabelText, getByTestId } = render(<ContactForm />);
 
   const firstNameInput = getByLabelText(/First Name/i);
   const lastNameInput = getByLabelText(/Last Name/i);
@@ -47,7 +47,7 @@ test("contact form will submit", () => {
   const messageInput = getByLabelText(/message/i);
 
   fireEvent.change(firstNameInput, {
-    target: { value: "Gra" },
+    target: { value: "Gracee" },
   });
   fireEvent.change(lastNameInput, {
     target: { name: "lastName", value: "Gop" },
@@ -60,7 +60,7 @@ test("contact form will submit", () => {
   });
 
   //assert
-  expect(firstNameInput.value).toBe("Gra");
+  expect(firstNameInput.value).toBe("Gracee");
   expect(lastNameInput.value).toBe("Gop");
   expect(emailInput.value).toBe("Gop@gmail.com");
   expect(messageInput.value).toBe("This is wild");
